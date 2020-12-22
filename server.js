@@ -7,10 +7,12 @@ import userRoutes from "./routes/userRoutes.js"
 import uploadRoutes from "./routes/uploadRoutes.js"
 import { notFound, errorHandler } from "./middleware/errorMiddleware.js"
 import orderRoutes from "./routes/orderRoutes.js"
+import cors from('cors')
 dotenv.config()
 connectDB()
 
-const app=express()
+const app = express()
+app.use(cors())
 app.use(express.json())
 
 
