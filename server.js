@@ -7,15 +7,15 @@ import userRoutes from "./routes/userRoutes.js"
 import uploadRoutes from "./routes/uploadRoutes.js"
 import { notFound, errorHandler } from "./middleware/errorMiddleware.js"
 import orderRoutes from "./routes/orderRoutes.js"
-import cors from('cors')
+import cors from 'cors'
 dotenv.config()
 connectDB()
 
 const app = express()
-app.use(cors())
+
 app.use(express.json())
 
-
+app.use(cors())
 app.get("/",(req,res)=>{
     res.send("API is Running!!!")
 })
